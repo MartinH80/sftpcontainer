@@ -9,6 +9,7 @@ RUN apk update
 RUN apk upgrade
 
 # install openssh-server
+RUN apk add openssh-server
 RUN apk add openssh-sftp-server
 
 # make directory to expose user folders
