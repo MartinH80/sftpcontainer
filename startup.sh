@@ -5,7 +5,7 @@
 addgroup sftpg
 
 # Create required users and their personal directory
-# Read each line from /data/userlist.txt
+# Read each line from /userlist.txt
 while IFS=' ' read -r username password; do
   # Check if both username and password are not empty
   if [ -n "$username" ] && [ -n "$password" ]; then
@@ -24,7 +24,7 @@ while IFS=' ' read -r username password; do
   else
     echo "Skipping line: either username or password is missing."
   fi
-done < /data/userlist.txt
+done < /userlist.txt
 
 # create ssh keys
 /usr/bin/ssh-keygen -A
