@@ -14,7 +14,7 @@ while IFS=' ' read -r username password; do
     #   without asking for a password (-D)
     #   without shell access (-s /sbin/nologin)
     #   in group sftpg
-    adduser -H -D -s /sbin/nologin $username sftpg
+    adduser -H -D -s /sbin/nologin $username -G sftpg
     # Set the user's password
     echo "$username:$password" | chpasswd
     echo "Created user $username with specified password."
