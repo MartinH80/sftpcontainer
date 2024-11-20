@@ -21,6 +21,8 @@ while IFS=' ' read -r username password; do
     # make user directory
     mkdir /data/$username
     chown root:sftpg /data/$username
+    mkdir /data/$username/files
+    chown $username:sftpg /data/$username/files
   else
     echo "Skipping line: either username or password is missing."
   fi
